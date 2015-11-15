@@ -1,5 +1,10 @@
 ###Changelog
 
+####Version 1.5
+Rebranded to Konvos
+Updated Logo
+Updated Version Numbers
+
 ####Versrion 1.7.3
 * changed app name from Conversations to Pix-Art Messenger
 * changed chat background to light yellow
