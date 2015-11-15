@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="ConversationsTheme" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+    <style name="KonvosBlueTheme" parent="@android:style/Theme.Holo.Light.DarkActionBar">
         <item name="android:actionBarStyle">@style/ConversationsActionBar</item>
         <item name="android:actionBarWidgetTheme">@style/ConversationsActionBarWidget</item>
         <item name="android:actionBarTabStyle">@style/ConversationsActionBarTabs</item>
@@ -32,7 +32,7 @@
         <item name="attr/icon_import_export">@drawable/ic_stat_communication_import_export</item>
     </style>
 
-    <style name="ConversationsTheme.LargerText" parent="ConversationsTheme">
+    <style name="ConversationsTheme.LargerText" parent="KonvosBlueTheme">
         <item name="TextSizeInfo">14sp</item>
         <item name="TextSizeBody">16sp</item>
         <item name="TextSizeHeadline">22sp</item>

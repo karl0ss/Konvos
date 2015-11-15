@@ -951,7 +951,7 @@ public abstract class XmppActivity extends Activity {
 		if (getPreferences().getBoolean("use_larger_font", false)) {
 			return R.style.ConversationsTheme_LargerText;
 		} else {
-			return R.style.ConversationsTheme;
+			return R.style.KonvosBlueTheme;
 		}
 	}
 
