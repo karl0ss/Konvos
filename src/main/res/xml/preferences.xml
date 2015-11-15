@@ -16,7 +16,7 @@
             android:summary="@string/pref_xmpp_resource_summary"
             android:title="@string/pref_xmpp_resource"/>
         <ListPreference
-            android:defaultValue="1048576"
+            android:defaultValue="0"
             android:entries="@array/filesizes"
             android:entryValues="@array/filesizes_values"
             android:key="auto_accept_file_size"
@@ -83,7 +83,7 @@
             android:title="@string/pref_sound"/>
 
         <CheckBoxPreference
-            android:defaultValue="false"
+            android:defaultValue="true"
             android:dependency="show_notification"
             android:key="always_notify_in_conference"
             android:summary="@string/pref_conference_notifications_summary"
@@ -119,7 +119,7 @@
             android:summary="@string/pref_quick_action_summary"
             android:title="@string/pref_quick_action"/>
         <CheckBoxPreference
-            android:defaultValue="false"
+            android:defaultValue="true"
             android:key="show_dynamic_tags"
             android:summary="@string/pref_show_dynamic_tags_summary"
             android:title="@string/pref_show_dynamic_tags"/>
@@ -166,19 +166,19 @@
             </PreferenceCategory>
             <PreferenceCategory android:title="@string/pref_presence_settings">
                 <CheckBoxPreference
-                    android:defaultValue="false"
+                    android:defaultValue="true"
                     android:key="away_when_screen_off"
                     android:summary="@string/pref_away_when_screen_off_summary"
                     android:title="@string/pref_away_when_screen_off"/>
                 <CheckBoxPreference
-                    android:defaultValue="false"
+                    android:defaultValue="true"
                     android:key="xa_on_silent_mode"
                     android:summary="@string/pref_xa_on_silent_mode_summary"
                     android:title="@string/pref_xa_on_silent_mode"/>
             </PreferenceCategory>
             <PreferenceCategory android:title="@string/pref_expert_options_other">
                 <CheckBoxPreference
-                    android:defaultValue="true"
+                    android:defaultValue="false"
                     android:key="keep_foreground_service"
                     android:summary="@string/pref_keep_foreground_service_summary"
                     android:title="@string/pref_keep_foreground_service"/>
