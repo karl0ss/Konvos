@@ -57,4 +57,14 @@
 		<item>voice</item>
 		<item>location</item>
 	</string-array>
+
+	<string-array name="theme_colours">
+		<item>Blue</item>
+		<item>Green</item>
+	</string-array>
+
+	<string-array name="theme_values">
+		<item>#ff24869c</item>
+		<item>#ff259b24</item>
+	</string-array>
 </resources>

@@ -195,7 +195,7 @@ public class UpdaterActivity extends Activity {
                                             DownloadManager.Request request = new DownloadManager.Request(Download_Uri);
                                             request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI);
                                             request.setAllowedOverRoaming(false);
-                                            request.setTitle("Conversations Update");
+                                            request.setTitle("Konvos Update");
                                             request.setDestinationInExternalFilesDir(UpdaterActivity.this, Environment.DIRECTORY_DOWNLOADS, "Conversations" + versionName + ".apk");
                                             downloadReference = downloadManager.enqueue(request);
                                             Toast.makeText(getApplicationContext(),

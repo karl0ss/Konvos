@@ -90,6 +90,13 @@
             android:title="@string/pref_conference_notifications"/>
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/pref_ui_options">
+        <ListPreference
+            android:dialogTitle="@string/choose_theme_colour"
+            android:entries="@array/theme_colours"
+            android:entryValues="@array/theme_values"
+            android:key="pick_theme"
+            android:summary="@string/pref_change_theme_summary"
+            android:title="@string/pref_change_theme"/>
         <CheckBoxPreference
             android:defaultValue="true"
             android:key="use_subject"
