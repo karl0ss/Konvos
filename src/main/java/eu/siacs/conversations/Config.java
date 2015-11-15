@@ -9,7 +9,7 @@ public final class Config {
 	public static final String LOGTAG = "conversations";
 
 
-	public static final String DOMAIN_LOCK = "pix-art.de"; //only allow account creation for this domain
+	public static final String DOMAIN_LOCK = "Konvos.cf"; //only allow account creation for this domain
 	public static final boolean DISALLOW_REGISTRATION_IN_UI = false; //hide the register checkbox
 	public static final boolean HIDE_PGP_IN_UI = true; //some more consumer focused clients might want to disable OpenPGP
 	public static final boolean HIDE_ENCRYPTION_IN_UI = false; //completely hide encryption options in menu bar
