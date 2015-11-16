@@ -920,7 +920,7 @@ public abstract class XmppActivity extends Activity {
 				@Override
 				public NdefMessage createNdefMessage(NfcEvent nfcEvent) {
 					return new NdefMessage(new NdefRecord[]{
-						NdefRecord.createUri(getShareableUri()),
+							NdefRecord.createUri(getShareableUri()),
 							NdefRecord.createApplicationRecord("eu.siacs.conversations")
 					});
 				}
@@ -949,6 +949,14 @@ public abstract class XmppActivity extends Activity {
 
 	protected int findTheme() {
 		if (getPreferences().getBoolean("use_larger_font", false)) {
+			return R.style.ConversationsTheme_LargerText;
+		} else {
+			return R.style.KonvosBlueTheme;
+		}
+	}
+
+	protected int findTheme2() {
+		if (getPreferences().getBoolean("pick_theme", false)) {
 			return R.style.ConversationsTheme_LargerText;
 		} else {
 			return R.style.KonvosBlueTheme;

@@ -64,7 +64,7 @@
 	</string-array>
 
 	<string-array name="theme_values">
-		<item>#ff24869c</item>
-		<item>#ff259b24</item>
+		<item>Blue</item>
+		<item>Green</item>
 	</string-array>
 </resources>

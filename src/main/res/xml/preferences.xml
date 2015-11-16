@@ -91,6 +91,7 @@
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/pref_ui_options">
         <ListPreference
+            android:defaultValue="Blue"
             android:dialogTitle="@string/choose_theme_colour"
             android:entries="@array/theme_colours"
             android:entryValues="@array/theme_values"
