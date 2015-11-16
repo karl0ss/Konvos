@@ -1,5 +1,15 @@
 ###Changelog
 
+####Version 1.8.1
+CherryPick Test
+Full ChangeLog display
+
+####Version 1.8
+Green / Blue Theme Switch
+
+####Version 1.7
+Fixed Updator
+
 ####Version 1.5
 Rebranded to Konvos
 Updated Logo

@@ -195,11 +195,7 @@ public class UpdaterActivity extends Activity {
                                             DownloadManager.Request request = new DownloadManager.Request(Download_Uri);
                                             request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI);
                                             request.setAllowedOverRoaming(false);
-<<<<<<< HEAD
                                             request.setTitle("Konvos Update");
-=======
-                                            request.setTitle("Pix-Art Messenger Update");
->>>>>>> 8ea1e78... added full changelog as button...
                                             request.setDestinationInExternalFilesDir(UpdaterActivity.this, Environment.DIRECTORY_DOWNLOADS, "Conversations" + versionName + ".apk");
                                             downloadReference = downloadManager.enqueue(request);
                                             Toast.makeText(getApplicationContext(),
@@ -210,7 +206,7 @@ public class UpdaterActivity extends Activity {
                                     .setNeutralButton(R.string.changelog, new DialogInterface.OnClickListener() {
                                         //open link to changelog
                                         public void onClick(DialogInterface dialog, int id) {
-                                            Uri uri = Uri.parse("https://github.com/kriztan/Conversations/blob/development/CHANGELOG.md"); // missing 'http://' will cause crashed
+                                            Uri uri = Uri.parse("https://github.com/karl0ss/Conversations/blob/Konvos/CHANGELOG.md"); // missing 'http://' will cause crashed
                                             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                                             startActivity(intent);
                                             //restart updater to show dialog again after coming back after opening changelog
