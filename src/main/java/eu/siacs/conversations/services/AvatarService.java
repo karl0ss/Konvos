@@ -45,14 +45,14 @@ public class AvatarService {
 		if (avatar != null || cachedOnly) {
 			return avatar;
 		}
+		if (contact.getProfilePhoto() != null) {
+			avatar = mXmppConnectionService.getFileBackend().cropCenterSquare(Uri.parse(contact.getProfilePhoto()), size);
+		}
 		if (avatar == null && contact.getAvatar() != null) {
 			avatar = mXmppConnectionService.getFileBackend().getAvatar(contact.getAvatar(), size);
 		}
-		if (avatar == null && contact.getProfilePhoto() != null) {
-			avatar = mXmppConnectionService.getFileBackend().cropCenterSquare(Uri.parse(contact.getProfilePhoto()), size);
-		}
 		if (avatar == null) {
-            avatar = get(contact.getDisplayName(), size, cachedOnly);
+			avatar = get(contact.getDisplayName(), size, cachedOnly);
 		}
 		this.mXmppConnectionService.getBitmapCache().put(KEY, avatar);
 		return avatar;
@@ -257,7 +257,7 @@ public class AvatarService {
 	}
 
 	private boolean drawTile(Canvas canvas, String letter, int tileColor,
-						  int left, int top, int right, int bottom) {
+							 int left, int top, int right, int bottom) {
 		letter = letter.toUpperCase(Locale.getDefault());
 		Paint tilePaint = new Paint(), textPaint = new Paint();
 		tilePaint.setColor(tileColor);
@@ -277,15 +277,15 @@ public class AvatarService {
 	}
 
 	private boolean drawTile(Canvas canvas, MucOptions.User user, int left,
-						  int top, int right, int bottom) {
+							 int top, int right, int bottom) {
 		Contact contact = user.getContact();
 		if (contact != null) {
 			Uri uri = null;
-			if (contact.getAvatar() != null) {
+			if (contact.getProfilePhoto() != null) {
+				uri = Uri.parse(contact.getProfilePhoto());
+			} else if (contact.getAvatar() != null) {
 				uri = mXmppConnectionService.getFileBackend().getAvatarUri(
 						contact.getAvatar());
-			} else if (contact.getProfilePhoto() != null) {
-				uri = Uri.parse(contact.getProfilePhoto());
 			}
 			if (drawTile(canvas, uri, left, top, right, bottom)) {
 				return true;
@@ -332,7 +332,7 @@ public class AvatarService {
 	}
 
 	private boolean drawTile(Canvas canvas, Bitmap bm, int dstleft, int dsttop,
-						  int dstright, int dstbottom) {
+							 int dstright, int dstbottom) {
 		Rect dst = new Rect(dstleft, dsttop, dstright, dstbottom);
 		canvas.drawBitmap(bm, null, dst, null);
 		return true;
