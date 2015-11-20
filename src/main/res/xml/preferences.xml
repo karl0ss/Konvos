@@ -141,21 +141,6 @@
         android:key="advanced"
         android:title="@string/pref_advanced_options">
         <PreferenceScreen
-            android:key="plugins"
-            android:summary="@string/pref_plugins"
-            android:title="@string/pref_plugins_summary">
-            <PreferenceCategory android:title="@string/pref_plugins">
-                <Preference
-                    android:key="download_location_plugin"
-                    android:summary="@string/pref_download_SharePlugin"
-                    android:title="@string/pref_download_SharePlugin_summary"/>
-                <Preference
-                    android:key="download_voice_plugin"
-                    android:summary="@string/pref_download_VoicePlugin"
-                    android:title="@string/pref_download_VoicePlugin_summary"/>
-            </PreferenceCategory>
-        </PreferenceScreen>
-        <PreferenceScreen
             android:key="expert"
             android:summary="@string/pref_expert_options_summary"
             android:title="@string/pref_expert_options">

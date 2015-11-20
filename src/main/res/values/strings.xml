@@ -530,6 +530,7 @@
 	<string name="pref_use_white_background_summary">Show received messages as black text on a white background</string>
 	<string name="account_status_dns_timeout">Timeout in DNS</string>
 	<string name="action_check_update">Check for Updates</string>
+	<string name="action_download_plugins">Download Plugins</string>
 	<string name="title_activity_updater">Update Service</string>
 	<string name="update_available">Konvos %1$s with the following changes is available:\n\n%2$s\n\nUpdate Konvos %3$s to Konvos %1$s now?</string>
 	<string name="checking_for_updates">Checking for Konvos updates</string>
@@ -559,10 +560,4 @@
 	<string name="verified_omemo_key_with_certificate">Verified OMEMO key with certificate!</string>
 	<string name="device_does_not_support_certificates">Your device does not support the selection of client certificates!</string>
 	<string name="changelog">Change Log</string>
-	<string name="pref_plugins">Plugins</string>
-    <string name="pref_plugins_summary">Download Konvos plugins</string>
-    <string name="pref_download_SharePlugin">Share Location Plugin</string>
-    <string name="pref_download_VoicePlugin">Voice Share Plugin</string>
-    <string name="pref_download_SharePlugin_summary">Download Share Location Plugin</string>
-    <string name="pref_download_VoicePlugin_summary">Download Voice Share Plugin</string>
 </resources>

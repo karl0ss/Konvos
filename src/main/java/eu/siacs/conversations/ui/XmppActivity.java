@@ -341,6 +341,10 @@ public abstract class XmppActivity extends Activity {
 			case R.id.action_accounts:
 				startActivity(new Intent(this, ManageAccountActivity.class));
 				break;
+			case R.id.action_download_plugins:
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://konvos.cf/Update/plugins.html"));
+                startActivity(browserIntent);
+				break;
 			case android.R.id.home:
 				finish();
 				break;
