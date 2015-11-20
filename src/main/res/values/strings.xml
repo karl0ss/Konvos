@@ -558,5 +558,11 @@
 	<string name="error_fetching_omemo_key">Error fetching OMEMO key!</string>
 	<string name="verified_omemo_key_with_certificate">Verified OMEMO key with certificate!</string>
 	<string name="device_does_not_support_certificates">Your device does not support the selection of client certificates!</string>
-	<string name="changelog">Change Long</string>
+	<string name="changelog">Change Log</string>
+	<string name="pref_plugins">Plugins</string>
+    <string name="pref_plugins_summary">Download Konvos plugins</string>
+    <string name="pref_download_SharePlugin">Share Location Plugin</string>
+    <string name="pref_download_VoicePlugin">Voice Share Plugin</string>
+    <string name="pref_download_SharePlugin_summary">Download Share Location Plugin</string>
+    <string name="pref_download_VoicePlugin_summary">Download Voice Share Plugin</string>
 </resources>

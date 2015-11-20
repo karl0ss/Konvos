@@ -120,6 +120,8 @@ public class SettingsActivity extends XmppActivity implements
 		});
 	}
 
+
+
 	@Override
 	public void onStop() {
 		super.onStop();
@@ -186,3 +188,4 @@ public class SettingsActivity extends XmppActivity implements
 	}
 
 }
+
