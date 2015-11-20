@@ -3,6 +3,7 @@ package eu.siacs.conversations.ui;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Fragment;
+import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
@@ -10,6 +11,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.content.IntentSender.SendIntentException;
+import android.media.RingtoneManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.InputType;
@@ -875,6 +877,7 @@ public class ConversationFragment extends Fragment implements EditMessage.Keyboa
 		messagesView.setSelection(size - 1);
 		mEditMessage.setText("");
 		updateChatMsgHint();
+
 	}
 
 	public void setFocusOnInputField() {

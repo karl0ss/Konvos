@@ -367,7 +367,7 @@ public abstract class XmppActivity extends Activity {
 		mSecondaryBackgroundColor = getResources().getColor(R.color.grey200);
 		this.mTheme = findTheme();
 		setTheme(this.mTheme);
-		this.mUsingEnterKey = usingEnterKey();
+        this.mUsingEnterKey = usingEnterKey();
 		mUseSubject = getPreferences().getBoolean("use_subject", true);
 		final ActionBar ab = getActionBar();
 		if (ab!=null) {
@@ -394,7 +394,7 @@ public abstract class XmppActivity extends Activity {
 
 	public void switchToConversation(Conversation conversation, String text,
 			boolean newTask) {
-		switchToConversation(conversation,text,null,false,newTask);
+		switchToConversation(conversation, text, null, false, newTask);
 	}
 
 	public void highlightInMuc(Conversation conversation, String nick) {
@@ -477,49 +477,49 @@ public abstract class XmppActivity extends Activity {
 
 	protected void announcePgp(Account account, final Conversation conversation) {
 		xmppConnectionService.getPgpEngine().generateSignature(account,
-				"online", new UiCallback<Account>() {
+                "online", new UiCallback<Account>() {
 
-					@Override
-					public void userInputRequried(PendingIntent pi,
-												  Account account) {
-						try {
-							startIntentSenderForResult(pi.getIntentSender(),
-									REQUEST_ANNOUNCE_PGP, null, 0, 0, 0);
-						} catch (final SendIntentException ignored) {
-						}
-					}
+                    @Override
+                    public void userInputRequried(PendingIntent pi,
+                                                  Account account) {
+                        try {
+                            startIntentSenderForResult(pi.getIntentSender(),
+                                    REQUEST_ANNOUNCE_PGP, null, 0, 0, 0);
+                        } catch (final SendIntentException ignored) {
+                        }
+                    }
 
-					@Override
-					public void success(Account account) {
-						xmppConnectionService.databaseBackend.updateAccount(account);
-						xmppConnectionService.sendPresence(account);
-						if (conversation != null) {
-							conversation.setNextEncryption(Message.ENCRYPTION_PGP);
-							xmppConnectionService.databaseBackend.updateConversation(conversation);
-						}
-					}
+                    @Override
+                    public void success(Account account) {
+                        xmppConnectionService.databaseBackend.updateAccount(account);
+                        xmppConnectionService.sendPresence(account);
+                        if (conversation != null) {
+                            conversation.setNextEncryption(Message.ENCRYPTION_PGP);
+                            xmppConnectionService.databaseBackend.updateConversation(conversation);
+                        }
+                    }
 
-					@Override
-					public void error(int error, Account account) {
-						displayErrorDialog(error);
-					}
-				});
+                    @Override
+                    public void error(int error, Account account) {
+                        displayErrorDialog(error);
+                    }
+                });
 	}
 
 	protected void displayErrorDialog(final int errorCode) {
 		runOnUiThread(new Runnable() {
 
-			@Override
-			public void run() {
-				AlertDialog.Builder builder = new AlertDialog.Builder(
-						XmppActivity.this);
-				builder.setIconAttribute(android.R.attr.alertDialogIcon);
-				builder.setTitle(getString(R.string.error));
-				builder.setMessage(errorCode);
-				builder.setNeutralButton(R.string.accept, null);
-				builder.create().show();
-			}
-		});
+            @Override
+            public void run() {
+                AlertDialog.Builder builder = new AlertDialog.Builder(
+                        XmppActivity.this);
+                builder.setIconAttribute(android.R.attr.alertDialogIcon);
+                builder.setTitle(getString(R.string.error));
+                builder.setMessage(errorCode);
+                builder.setNeutralButton(R.string.accept, null);
+                builder.create().show();
+            }
+        });
 
 	}
 
@@ -558,9 +558,9 @@ public abstract class XmppActivity extends Activity {
 					public void onClick(DialogInterface dialog, int which) {
 						if (xmppConnectionServiceBound) {
 							xmppConnectionService.sendPresencePacket(contact
-									.getAccount(), xmppConnectionService
-									.getPresenceGenerator()
-									.requestPresenceUpdatesFrom(contact));
+                                    .getAccount(), xmppConnectionService
+                                    .getPresenceGenerator()
+                                    .requestPresenceUpdatesFrom(contact));
 						}
 					}
 				});
@@ -672,12 +672,12 @@ public abstract class XmppActivity extends Activity {
 		trustToggle.setOnCheckedChangeListener(onCheckedChangeListener);
 		trustToggle.setOnClickListener(onClickListener);
 		view.setOnLongClickListener(new View.OnLongClickListener() {
-			@Override
-			public boolean onLongClick(View v) {
-				showPurgeKeyDialog(account, fingerprint);
-				return true;
-			}
-		});
+            @Override
+            public boolean onLongClick(View v) {
+                showPurgeKeyDialog(account, fingerprint);
+                return true;
+            }
+        });
 		boolean x509 = trust == XmppAxolotlSession.Trust.TRUSTED_X509 || trust == XmppAxolotlSession.Trust.INACTIVE_TRUSTED_X509;
 		switch (trust) {
 			case UNTRUSTED:
@@ -932,7 +932,7 @@ public abstract class XmppActivity extends Activity {
 	protected void unregisterNdefPushMessageCallback() {
 		NfcAdapter nfcAdapter = NfcAdapter.getDefaultAdapter(this);
 		if (nfcAdapter != null && nfcAdapter.isEnabled()) {
-			nfcAdapter.setNdefPushMessageCallback(null,this);
+			nfcAdapter.setNdefPushMessageCallback(null, this);
 		}
 	}
 
@@ -949,20 +949,17 @@ public abstract class XmppActivity extends Activity {
 	}
 
 	protected int findTheme() {
-		if (getPreferences().getBoolean("use_larger_font", false)) {
-			return R.style.ConversationsTheme_LargerText;
-		} else {
-			return R.style.KonvosBlueTheme;
-		}
-	}
+        if (getPreferences().getBoolean("green_theme", false)) {
+            return R.style.KonvosGreenTheme;
+        } else {
+            if (getPreferences().getBoolean("red_theme", false)) {
+                return R.style.KonvosRedTheme;
+            } else {
+                    return R.style.KonvosBlueTheme;
+                }
+            }
+        }
 
-	protected int findTheme2() {
-		if (getPreferences().getBoolean("pick_theme", false)) {
-			return R.style.ConversationsTheme_LargerText;
-		} else {
-			return R.style.KonvosBlueTheme;
-		}
-	}
 
     @Override
 	public void onPause() {

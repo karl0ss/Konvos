@@ -72,5 +72,4 @@
         android:orderInCategory="100"
         android:showAsAction="never"
         android:title="@string/action_check_update"/>
-
 </menu>

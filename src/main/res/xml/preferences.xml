@@ -90,14 +90,23 @@
             android:title="@string/pref_conference_notifications"/>
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/pref_ui_options">
-        <ListPreference
-            android:defaultValue="Blue"
-            android:dialogTitle="@string/choose_theme_colour"
-            android:entries="@array/theme_colours"
-            android:entryValues="@array/theme_values"
-            android:key="pick_theme"
+        <PreferenceScreen
+            android:key="@string/pref_change_theme"
             android:summary="@string/pref_change_theme_summary"
-            android:title="@string/pref_change_theme"/>
+            android:title="@string/pref_change_theme">
+            <PreferenceCategory android:title="Untick all for default Blue theme">
+            <CheckBoxPreference
+                android:defaultValue="false"
+                android:key="green_theme"
+                android:summary="Use Green Theme"
+                android:title="Green Theme"/>
+            <CheckBoxPreference
+                android:defaultValue="false"
+                android:key="red_theme"
+                android:summary="Use Red Theme"
+                android:title="Red Theme"/>
+            </PreferenceCategory>
+        </PreferenceScreen>
         <CheckBoxPreference
             android:defaultValue="true"
             android:key="use_subject"
@@ -108,11 +117,7 @@
             android:key="use_white_background"
             android:title="@string/pref_use_white_background"
             android:summary="@string/pref_use_white_background_summary"/>
-        <CheckBoxPreference
-            android:defaultValue="false"
-            android:key="use_larger_font"
-            android:summary="@string/pref_use_larger_font_summary"
-            android:title="@string/pref_use_larger_font"/>
+
         <CheckBoxPreference
             android:defaultValue="true"
             android:key="send_button_status"
@@ -140,6 +145,18 @@
     <PreferenceCategory
         android:key="advanced"
         android:title="@string/pref_advanced_options">
+        <PreferenceScreen
+            android:key="plugins"
+            android:summary="Download plugins for Konvos"
+            android:title="Plugins">            <Preference android:title="Share Location" >
+            <intent android:action="android.intent.action.VIEW"
+                android:data="http://konvos.cf/Update/ShareLocationPlugin-debug.apk" />
+        </Preference>
+            <Preference android:title="Voice Recorder" >
+                <intent android:action="android.intent.action.VIEW"
+                    android:data="http://konvos.cf/Update/VoiceRecorder-debug.apk" />
+            </Preference>
+        </PreferenceScreen>
         <PreferenceScreen
             android:key="expert"
             android:summary="@string/pref_expert_options_summary"
@@ -196,13 +213,16 @@
                         android:summary="@string/pref_export_logs_summary"/>
             </PreferenceCategory>
         </PreferenceScreen>
-
         <CheckBoxPreference
             android:defaultValue="true"
             android:key="never_send"
             android:summary="@string/pref_never_send_crash_summary"
             android:title="@string/pref_never_send_crash"/>
     </PreferenceCategory>
+    <Preference android:title="Manual APK Download" >
+        <intent android:action="android.intent.action.VIEW"
+            android:data="http://konvos.cf/Update/Konvos-debug.apk" />
+    </Preference>
     <eu.siacs.conversations.ui.AboutPreference
         android:summary="@string/pref_about_conversations_summary"
         android:title="@string/title_activity_about"/>
