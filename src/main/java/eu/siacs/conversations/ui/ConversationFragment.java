@@ -95,12 +95,12 @@ public class ConversationFragment extends Fragment implements EditMessage.Keyboa
 			}
 			activity.quickPasswordEdit(password, new OnValueEdited() {
 
-				@Override
-				public void onValueEdited(String value) {
-					activity.xmppConnectionService.providePasswordForMuc(
-							conversation, value);
-				}
-			});
+                @Override
+                public void onValueEdited(String value) {
+                    activity.xmppConnectionService.providePasswordForMuc(
+                            conversation, value);
+                }
+            });
 		}
 	};
 	protected ListView messagesView;
@@ -108,6 +108,7 @@ public class ConversationFragment extends Fragment implements EditMessage.Keyboa
 	protected MessageAdapter messageListAdapter;
 	private EditMessage mEditMessage;
 	private ImageButton mSendButton;
+    private ImageButton mMeButton;
 	private RelativeLayout snackbar;
 	private TextView snackbarMessage;
 	private TextView snackbarAction;
@@ -304,6 +305,16 @@ public class ConversationFragment extends Fragment implements EditMessage.Keyboa
 			}
 		}
 	};
+
+    private OnClickListener mMeButtonListener = new OnClickListener() {
+
+        @Override
+        public void onClick(View v) {
+            TextView view = (TextView) getActivity().findViewById(R.id.textinput);
+            view.append("/me ");
+        }
+    };
+
 	private OnClickListener clickToMuc = new OnClickListener() {
 
 		@Override
@@ -414,6 +425,9 @@ public class ConversationFragment extends Fragment implements EditMessage.Keyboa
 
 		mSendButton = (ImageButton) view.findViewById(R.id.textSendButton);
 		mSendButton.setOnClickListener(this.mSendButtonListener);
+
+		mMeButton = (ImageButton) view.findViewById(R.id.textMeButton);
+		mMeButton.setOnClickListener(this.mMeButtonListener);
 
 		snackbar = (RelativeLayout) view.findViewById(R.id.snackbar);
 		snackbarMessage = (TextView) view.findViewById(R.id.snackbar_message);

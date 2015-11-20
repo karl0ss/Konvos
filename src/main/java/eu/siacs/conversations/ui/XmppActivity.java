@@ -36,6 +36,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.SystemClock;
+import android.preference.Preference;
 import android.preference.PreferenceManager;
 import android.text.InputType;
 import android.util.DisplayMetrics;
@@ -917,14 +918,14 @@ public abstract class XmppActivity extends Activity {
 		NfcAdapter nfcAdapter = NfcAdapter.getDefaultAdapter(this);
 		if (nfcAdapter != null && nfcAdapter.isEnabled()) {
 			nfcAdapter.setNdefPushMessageCallback(new NfcAdapter.CreateNdefMessageCallback() {
-				@Override
-				public NdefMessage createNdefMessage(NfcEvent nfcEvent) {
-					return new NdefMessage(new NdefRecord[]{
-							NdefRecord.createUri(getShareableUri()),
-							NdefRecord.createApplicationRecord("eu.siacs.conversations")
-					});
-				}
-			}, this);
+                @Override
+                public NdefMessage createNdefMessage(NfcEvent nfcEvent) {
+                    return new NdefMessage(new NdefRecord[]{
+                            NdefRecord.createUri(getShareableUri()),
+                            NdefRecord.createApplicationRecord("eu.siacs.conversations")
+                    });
+                }
+            }, this);
 		}
 	}
 
@@ -963,7 +964,7 @@ public abstract class XmppActivity extends Activity {
 		}
 	}
 
-	@Override
+    @Override
 	public void onPause() {
 		super.onPause();
 		this.unregisterNdefPushMessageCallback();
