@@ -66,7 +66,7 @@ public class NotificationService {
 				|| conferenceNotificationsEnabled()
 				|| wasHighlightedOrPrivate(message)
 		);
-	}
+    }
 
 	public void notifyPebble(final Message message) {
 		final Intent i = new Intent("com.getpebble.action.SEND_NOTIFICATION");
