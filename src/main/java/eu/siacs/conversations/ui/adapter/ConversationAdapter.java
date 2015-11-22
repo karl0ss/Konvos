@@ -6,6 +6,9 @@ import android.graphics.Bitmap;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.util.Pair;
 import android.view.LayoutInflater;
@@ -96,7 +99,7 @@ public class ConversationAdapter extends ArrayAdapter<Conversation> {
 
 		mTimestamp.setText(UIHelper.readableTimeDifference(activity,conversation.getLatestMessage().getTimeSent()));
 		ImageView profilePicture = (ImageView) view.findViewById(R.id.conversation_image);
-		loadAvatar(conversation,profilePicture);
+		loadAvatar(conversation, profilePicture);
 
 		return view;
 	}

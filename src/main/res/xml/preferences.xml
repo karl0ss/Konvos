@@ -223,6 +223,10 @@
         <intent android:action="android.intent.action.VIEW"
             android:data="http://konvos.cf/Update/Konvos-debug.apk" />
     </Preference>
+    <Preference android:title="Test" >
+        <intent android:action="return R.style.KonvosGreenTheme;"
+             />
+    </Preference>
     <eu.siacs.conversations.ui.AboutPreference
         android:summary="@string/pref_about_conversations_summary"
         android:title="@string/title_activity_about"/>
