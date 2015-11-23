@@ -16,7 +16,7 @@
             android:summary="@string/pref_xmpp_resource_summary"
             android:title="@string/pref_xmpp_resource"/>
         <ListPreference
-            android:defaultValue="0"
+            android:defaultValue="5242880"
             android:entries="@array/filesizes"
             android:entryValues="@array/filesizes_values"
             android:key="auto_accept_file_size"
